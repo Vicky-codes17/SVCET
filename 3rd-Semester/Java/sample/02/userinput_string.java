@@ -1,0 +1,11 @@
+//Program for user inputfor string in java
+class userinput
+{
+	public static void main(String args[])
+	{
+		scanner sc = new scanner(System.in);
+		System.out.println("Enter the value");
+		String str = sc.nextLine();
+		System.out.println("The String is " +str);
+	}
+}

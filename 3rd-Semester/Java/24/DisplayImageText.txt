@@ -1,0 +1,29 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class DisplayImageText extends Application {
+    @Override
+    public void start(Stage stage) {
+        Label label = new Label("Hello, this is a label");
+
+        // Load an image
+        Image image = new Image("file:example.png");
+        ImageView imageView = new ImageView(image);
+
+        VBox vbox = new VBox(label, imageView);
+        Scene scene = new Scene(vbox, 400, 300);
+
+        stage.setTitle("JavaFX Image and Text Display");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
