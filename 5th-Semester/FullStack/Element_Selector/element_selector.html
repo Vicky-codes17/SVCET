@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Element Selector</title>
+</head>
+<body>
+    <h1 id="main-title">Welcome to My Page</h1>
+
+    <p class="description">This is a paragraph with class 'description'.</p>
+
+    <p class="description">Another paragraph with same class</p>
+
+    <div class="box">Box1</div>
+    <div class="box">Box2</div>
+    <span>Some span text</span>
+
+    <script>
+        //Select elements by ID
+        const title = document.getElementById('main-title');
+        console.log("Selected by ID:", title.innerText);
+
+        //Select elements by class name
+        const descriptions = document.getElementsByClassName('description');
+        console.log("Selected by Class Name:");
+        for (let desc of descriptions) {
+            console.log(desc.innerText);
+        }
+
+        //Select elements by tag name
+        const paragraph = document.getElementsByTagName('p');
+        console.log("Selected by Tag Name:");
+        for (let para of paragraph) {
+            console.log(para.innerText);
+        }
+
+        //Select first matching element using querySelector
+        const firstBox = document.querySelector('.box');
+        console.log("First Element with .boc class", firstBox.innerText);
+
+        //Select all matching elements using querySelectorAll
+        const allBoxes = document.querySelectorAll('.box');
+        console.log("All Elements with .box class:");
+        allBoxes.forEach(box => {
+            console.log(box.innerText);
+        });
+    </script>
+
+</body>
+</html>
