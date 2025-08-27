@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Button Click Events</title>
+</head>
+
+<body>
+    <h2>Click Event Handling Example</h2>
+    <button id="btn1">Button 1</button>
+    <button id="btn2">Button 2</button>
+    <button id="btn3">Button 3</button>
+    <p id="result"></p>
+    <script>
+        const btn1 = document.getElementById("btn1");
+        const btn2 = document.getElementById("btn2");
+        const btn3 = document.getElementById("btn3");
+        const result = document.getElementById("result");
+        function handleClick1() {
+            result.textContent = "You clicked Button 1";
+            btn1.style.color = "blue";
+            btn1.style.background = "pink";
+        }
+        function handleClick2() {
+            result.textContent = "You clicked Button 2";
+            btn2.style.color = "red";
+            btn2.style.background = "grey";
+        }
+        function handleClick3() {
+            result.textContent = "You clicked Button 3";
+            btn3.style.color = "green";
+            btn3.style.background = "yellow";
+        }
+        btn1.addEventListener("click", handleClick1);
+        btn2.addEventListener("click", handleClick2);
+        btn3.addEventListener("click", handleClick3);
+    </script>
+</body>
+
+</html>
