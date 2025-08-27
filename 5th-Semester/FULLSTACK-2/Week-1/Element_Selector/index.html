@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Element Selectors Example</title>
+</head>
+
+<body>
+    <p id="message">Hello, World!</p>
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <div class="container">
+        <p class="text">First paragraph</p>
+        <p class="text">Second paragraph</p>
+    </div>
+    <div class="container">
+        <p class="text">First paragraph</p>
+        <p class="text">First paragraph</p>
+        <p class="text">Second paragraph</p>
+    </div>
+    <script>
+        const message = document.getElementById("message");
+        console.log(message.textContent);
+    </script>
+    <script>
+        const boxes = document.getElementsByClassName("box");
+        console.log(boxes.length);
+    </script>
+    <script>
+        const allParagraphs = document.getElementsByTagName("p");
+        console.log(allParagraphs[0].textContent);
+    </script>
+    <script>
+        const firstParagraph = document.querySelector(".text");
+        console.log(firstParagraph.textContent);
+    </script>
+    <script>
+        const paragraphs = document.querySelectorAll(".text");
+        paragraphs.forEach((p, index) => console.log(`Paragraph ${index + 1}: ${p.textContent}`));
+    </script>
+</body>
+
+</html>
