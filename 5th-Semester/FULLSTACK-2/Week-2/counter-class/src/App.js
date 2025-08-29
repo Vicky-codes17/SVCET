@@ -38,5 +38,6 @@ class Counter extends Component {
   }
 }
 
+
 // Export the Counter component so it can be imported in App.js
 export default Counter;
