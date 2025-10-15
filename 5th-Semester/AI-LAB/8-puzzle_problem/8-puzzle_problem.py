@@ -1,3 +1,5 @@
+### Write a program to implement A* algorithm for 8-puzzle problem.
+
 import heapq
 
 # Manhattan Distance Heuristic
