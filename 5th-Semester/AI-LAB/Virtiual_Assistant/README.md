@@ -43,7 +43,6 @@ pip install -r requirements.txt
 ```
 
 4. Set up environment variables:
-   - Copy `.env.example` to `.env`
    - Get your Wolfram Alpha API key from [Wolfram Alpha Developer Portal](https://products.wolframalpha.com/api/)
    - Add your API key to `.env`:
      ```
