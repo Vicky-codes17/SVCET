@@ -1,3 +1,5 @@
+### Write a program to implement BFS and DFS for a given graph.
+
 from collections import deque
 
 graph = {
