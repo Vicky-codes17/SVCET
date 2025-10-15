@@ -9,8 +9,12 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
+# Initialize text-to-speech engine
 engine = pyttsx3.init()
-engine.setProperty("rate", 150)  
+engine.setProperty("rate", 150)
+engine.setProperty("volume", 1.0)  
+
+# Get Wolfram Alpha API key
 wolfram_app_id = os.getenv("WOLFRAM_APP_ID")
 if not wolfram_app_id:
     raise ValueError("WOLFRAM_APP_ID not found in .env file")
