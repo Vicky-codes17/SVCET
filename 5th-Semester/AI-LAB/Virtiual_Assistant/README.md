@@ -103,4 +103,4 @@ Ensure your system has a working microphone and that the application has permiss
 
 ## License
 
-This project is for educational purposes.
+This project is for educational purposes..
