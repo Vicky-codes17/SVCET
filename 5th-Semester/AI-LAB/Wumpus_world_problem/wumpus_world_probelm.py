@@ -40,7 +40,6 @@ def dfs(x, y):
             if dfs(new_x, new_y):
                 print(f"Moved to ({new_x}, {new_y})")
                 return True
-
     return False
 
 # Start search
