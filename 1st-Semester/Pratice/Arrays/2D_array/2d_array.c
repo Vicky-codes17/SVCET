@@ -3,6 +3,11 @@
 int main() {
     int a[2][3] = {{1, 2, 3}, {4, 5, 6}};
 
+
+    //Changing the Values 
+    a[0][0] = 10;
+    printf("%d\n", a[0][0]);
+
     printf("Elements of 2D array are:\n");
     // First ROW
     printf("%d", a[0][0]);
