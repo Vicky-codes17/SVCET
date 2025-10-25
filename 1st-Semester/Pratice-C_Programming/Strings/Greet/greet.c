@@ -8,5 +8,10 @@ int main() {
 
     //Char by char printing
     printf("%c\n", greetings[0]);
+
+    //String modification
+    greetings[7] = '2';
+    greetings[8] = 'C';
+    printf("%s\n", greetings);
     return 0;
 }
