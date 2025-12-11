@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p::first-line {
+            color: blue;
+            font-weight: bold;
+        }
+
+        p::before {
+            content: "Read this: ";
+            color: red;
+            font-weight: bold;
+        }
+
+        p::after {
+            content: " (The End)";
+            font-style: italic;
+        }
+
+        .box::before {
+            content: "";
+            /* Must have content for pseudo-elements to display */
+            display: block;
+            /* Allows you to set width and height */
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+        }
+
+        .box {
+            position: relative;
+            /* Needed for absolute positioning of ::before */
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        a::after {
+            content: " (" attr(href) ")";
+            /*shows the href in parenthesis after the link*/
+        }
+
+        ::selection {
+            /* styles the selected text */
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>This is a paragraph of text. The first line will be blue and bold. This is a longer line to demonstrate the
+        first-line pseudo-element. This part is not the first line.</p>
+
+    <div class="box">
+        This is a box with a pseudo-element before it.
+    </div>
+
+    <a href="https://www.example.com">Example Link</a>
+
+</body>
+
+</html>

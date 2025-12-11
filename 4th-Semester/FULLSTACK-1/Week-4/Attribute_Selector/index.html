@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Attribute Selector Example</title>
+    <style>
+        /* Selects all input elements with the type attribute set to "text" */
+        input[type="text"] {
+            border: 2px solid blue;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        /* Selects all input elements with the type attribute set to "password" */
+        input[type="password"] {
+            border: 2px solid red;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        /* Selects all anchor (a) elements that have an href attribute */
+        a[href] {
+            color: green;
+            text-decoration: none;
+        }
+
+        /* Selects all anchor elements whose href attribute begins with "https://" */
+        a[href^="https://"] {
+            font-weight: bold;
+        }
+
+        /* Selects all input elements that have a "data-custom" attribute */
+        input[data-custom] {
+            background-color: lightyellow;
+        }
+
+        /* Selects all input elements whose data-custom attribute ends with "test" */
+        input[data-custom$="test"] {
+            font-style: italic;
+        }
+
+        /* Selects all input elements whose data-custom attribute contains "middle"*/
+        input[data-custom*="middle"] {
+            border: 3px dotted purple;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" value="JohnDoe"><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" value="secret"><br><br>
+
+        <input type="text" data-custom="first-test" value="Custom 1"><br><br>
+
+        <input type="text" data-custom="middle-value" value="Custom 2"><br><br>
+
+        <input type="text" data-custom="another-test" value="Custom 3"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <br>
+
+    <a href="https://www.example.com">Example Link (HTTPS)</a><br>
+    <a href="http://www.anotherexample.com">Another Link (HTTP)</a><br>
+    <a href="/internal/page">Internal Link</a>
+
+</body>
+
+</html>

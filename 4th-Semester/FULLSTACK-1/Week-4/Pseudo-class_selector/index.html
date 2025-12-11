@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pseudo-class Selector Example</title>
+    <style>
+        /* Example 1: :hover */
+        .my-button {
+            background-color: lightblue;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .my-button:hover {
+            background-color: darkblue;
+            color: white;
+        }
+
+        /* Example 2: :nth-child */
+        ul li:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        /* Example 3: :focus */
+
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="text"]:focus {
+            border: 2px solid blue;
+            outline: none;
+            /* Removes default browser outline */
+        }
+
+        /* Example 4: :active */
+
+        .my-button-active {
+            background-color: lightgreen;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .my-button-active:active {
+            background-color: darkgreen;
+            color: white;
+        }
+
+        /* Example 5: :first-child and :last-child */
+        .my-list li:first-child {
+            color: red;
+        }
+
+        .my-list li:last-child {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>:hover Example</h2>
+    <button class="my-button">Hover Me</button>
+
+    <h2>:nth-child Example</h2>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+    <h2>:focus Example</h2>
+    <input type="text" placeholder="Enter text">
+
+    <h2>:active Example</h2>
+
+    <button class="my-button-active">Click and Hold</button>
+
+    <h2>:first-child and :last-child Example</h2>
+    <ul class="my-list">
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+        <li>Last Item</li>
+    </ul>
+
+</body>
+
+</html>

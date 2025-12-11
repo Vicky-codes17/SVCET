@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Combinator Selectors</title>
+    <style>
+        /* Descendant Combinator (space) */
+        div p {
+            color: blue;
+        }
+
+        /* Child Combinator (>) */
+        div>span {
+            font-weight: bold;
+        }
+
+        /* Adjacent Sibling Combinator (+) */
+        h2+p {
+            background-color: lightgray;
+        }
+
+        /* General Sibling Combinator (~) */
+        h2~ul {
+            border: 1px solid red;
+        }
+
+        /* adding some basic styling for better readability */
+        div,
+        section,
+        article {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p>This paragraph is inside a div (descendant).</p>
+        <span>This span is a direct child of the div (child).</span>
+        <section>
+            <p>This paragraph is inside a section, inside a div (descendant).</p>
+        </section>
+    </div>
+
+    <h2>Adjacent Sibling Example</h2>
+    <p>This paragraph is an adjacent sibling of the h2.</p>
+    <p>This paragraph is also inside the same div but it is not adjacent to h2.</p>
+
+    <h2>General Sibling Example</h2>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <p>This paragraph is a sibling, but not selected.</p>
+    <ul>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+</body>
+
+</html>
