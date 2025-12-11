@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/4th-Semester/FULLSTACK-1/Week-3/CSS_Levels/styles.css">
+    <!... Defining Internal style>
+        <style>
+            .SVCET {
+                text-align: center;
+                font-size: 25px;
+            }
+
+            .CSE {
+                color: #009900;
+                font-size: 50px;
+                font-weight: bold;
+            }
+
+            .CS {
+                color: blue;
+                font-style: bold;
+                font-size: 20px;
+            }
+        </style>
+</head>
+
+<body>
+
+    <!... Defining and applying the Inline style>
+
+        <h1 style="color:#009900; 
+          font-size:50px; 
+          font-style:italic; 
+          text-align:center;">
+            Inline CSS is designed only for an individual HTML tag
+        </h1>
+        <h1>The above Inline style won't be applied for this h1 (heading) tag</h1>
+
+        <!... applying Internal style>
+
+            <div class="SVCET">
+                <div class="CSE">Internal CSS</div>
+
+                <div class="CS">
+                    It defines a new style for the HTML tags
+                </div>
+            </div>
+            <p class="SVCET">Internal style will apply for this paragraph tag because it can be used multiple times
+                anywhere in this program once the internal style is defined.</p>
+
+            <p class="CS">Internal style will apply for this paragraph tag because it can be used multiple times
+                anywhere in this program once the internal style is defined.</p>
+
+            <!... applying External style>
+
+                <p class="second"> External CSS</p>
+                <p class="year">External style is defined in a separate file with the name of "file.css" and the same
+                    file is linked in this program inside the head tag with the help of link tag.</p>
+                <p class="Isem">In this program we learned INLINE, INTERNAL, and EXTERNAL CSS</p>
+</body>
+
+</html>
