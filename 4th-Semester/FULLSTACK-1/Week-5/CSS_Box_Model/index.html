@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Color References</title>
+    <style>
+        /* 1. Named Colors */
+        .named-color {
+            background-color: lightblue;
+            color: darkblue;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 2. Hexadecimal Colors */
+        .hex-color {
+            background-color: #ff9900;
+            /* Orange */
+            color: #333;
+            /* Dark gray */
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 3. Short Hexadecimal Colors */
+        .short-hex-color {
+            background-color: #f0f;
+            /* Magenta */
+            color: #fff;
+            /* White */
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 4. RGB Colors */
+        .rgb-color {
+            background-color: rgb(255, 0, 0);
+            /* Red */
+            color: rgb(255, 255, 255);
+            /* White */
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 5. RGBA Colors (with transparency) */
+        .rgba-color {
+            background-color: rgba(0, 128, 0, 0.5);
+            /* Semi-transparent green */
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 6. HSL Colors */
+        .hsl-color {
+            background-color: hsl(240, 100%, 50%);
+            /* Blue */
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 7. HSLA Colors (with transparency) */
+        .hsla-color {
+            background-color: hsla(120, 100%, 50%, 0.7);
+            /* Semi-transparent green */
+            color: black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 8. currentColor */
+        .current-color {
+            color: purple;
+            border: 5px solid currentColor;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 9. transparent */
+        .transparent-color {
+            background-color: transparent;
+            border: 2px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="named-color">Named Color (lightblue, darkblue)</div>
+    <div class="hex-color">Hexadecimal Color (#ff9900, #333)</div>
+    <div class="short-hex-color">Short Hexadecimal Color (#f0f, #fff)</div>
+    <div class="rgb-color">RGB Color (rgb(255, 0, 0))</div>
+    <div class="rgba-color">RGBA Color (rgba(0, 128, 0, 0.5))</div>
+    <div class="hsl-color">HSL Color (hsl(240, 100%, 50%))</div>
+    <div class="hsla-color">HSLA Color (hsla(120, 100%, 50%, 0.7))</div>
+    <div class="current-color">Current Color (purple border)</div>
+    <div class="transparent-color">Transparent color (black border)</div>
+
+</body>
+
+</html>
