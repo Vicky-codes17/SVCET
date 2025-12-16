@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Types of Functions in JavaScript</title>
+</head>
+<body>
+    <h2>JavaScript Function Types</h2>
+    <p id="output"></p>
+    <script>
+        function greet(name) {
+            return "Hello, " + name + "!";
+        }
+        const multiply = function (a, b) {
+            return a * b;
+        };
+        const subtract = (x, y) => x - y;
+        const greeting = greet("welcome"); 
+        const product = multiply(4, 5); 
+        const difference = subtract(10, 6);
+        console.log(greeting); 
+        console.log(product); 
+        console.log(difference);
+
+        document.getElementById("output").innerHTML = `
+            <strong>Function Declaration:</strong> ${greeting} <br>
+            <strong>Function Definition:</strong> 4 × 5 = ${product} <br>
+            <strong>Arrow Function:</strong> 10 - 6 = ${difference}`;
+
+    </script>
+</body>
+</html>

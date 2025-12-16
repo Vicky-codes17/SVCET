@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Box Model Example</title>
+    <style>
+        .box {
+            width: 200px;
+            /* Content width */
+            height: 100px;
+            /* Content height */
+            background-color: lightblue;
+            border: 5px solid blue;
+            /* Border */
+            padding: 20px;
+            /* Padding */
+            margin: 30px;
+            /* Margin */
+        }
+
+        .explanation {
+            font-family: sans-serif;
+            padding: 10px;
+        }
+
+        .content-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightgreen;
+            border: 2px solid green;
+        }
+
+        .border-box {
+            width: 200px;
+            height: 100px;
+            background-color: lightcoral;
+            border: 10px solid red;
+            padding: 10px;
+            box-sizing: border-box;
+            /*demonstrates the box-sizing property*/
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        This is a box.
+    </div>
+
+    <div class="explanation">
+        <p><b>Content:</b> The content is the actual text, images, or other elements within the box. In this example,
+            the content area is 200px wide and 100px high, and it has a light blue background.</p>
+        <p><b>Border:</b> The border surrounds the content and padding. Here, it's a 5px solid blue border.</p>
+        <p><b>Padding:</b> Padding is the space between the content and the border. It adds space inside the box. In
+            this example, there's 20px of padding on all sides.</p>
+        <p><b>Margin:</b> Margin is the space outside the border. It creates space between the box and other elements.
+            Here, there's 30px of margin on all sides.</p>
+
+        <p><b>Importance:</b> The box model is crucial for controlling the layout and spacing of elements on a web page.
+            It allows you to precisely define the dimensions and positioning of elements, ensuring a consistent and
+            visually appealing design.</p>
+
+        <p><b>Content-box vs. Border-box:</b></p>
+        <div class="content-box">Content-box</div>
+        <div class="border-box">Border-box</div>
+        <p>The first box uses the default content-box model. The second box uses the border-box model. Notice the
+            difference in the final size of the boxes, despite having similar width and height values in the css. The
+            border-box model makes it easier to work with elements that have padding and borders.</p>
+    </div>
+
+</body>
+
+</html>

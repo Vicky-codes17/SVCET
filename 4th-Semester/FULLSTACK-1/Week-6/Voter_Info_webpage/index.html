@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Voter Information</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        let name = prompt("Enter your name:");
+        let age = prompt("Enter your age:");
+
+        if (name && age) { // Check if both name and age are provided
+            age = parseInt(age); // Convert age to a number
+
+            let canVote = age >= 18 ? "Yes" : "No";
+
+            document.write("<table>");
+            document.write("<tr><th>Attribute</th><th>Value</th></tr>");
+            document.write("<tr><td>Name</td><td>" + name + "</td></tr>");
+            document.write("<tr><td>Age</td><td>" + age + "</td></tr>");
+            document.write("<tr><td>Can Vote</td><td>" + canVote + "</td></tr>");
+            document.write("</table>");
+        } else {
+            alert("Name and age are required.");
+        }
+    </script>
+
+</body>
+
+</html>

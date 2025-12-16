@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Input Methods</title>
+</head>
+
+<body>
+    <h1>JavaScript Input Methods</h1>
+
+    <p>Enter your name:</p>
+    <input type="text" id="nameInput"><br><br>
+    <button onclick="getInputFromInput()">Get Input (Input Element)</button>
+
+    <p id="output"></p>
+    <script>
+        // 1. Input Element (Text Input)
+        function getInputFromInput() {
+            let name = document.getElementById("nameInput").value;
+            document.getElementById("output").innerHTML = "Hello, " + name + "!";
+        }
+        // 2. prompt()
+        function getInputFromPrompt() {
+            let age = prompt("Please enter your age:", "25"); // Default value "25"
+            if (age != null)
+                document.getElementById("output").innerHTML = "Your age is: " + age;
+            else
+                document.getElementById("output").innerHTML = "User cancelled prompt.";
+        }
+        // 3. Confirm Box
+        function getInputFromConfirm() {
+            let result = confirm("Do you like Javascript?");
+            if (result)
+                document.getElementById("output").innerHTML = "User likes Javascript";
+            else
+                document.getElementById("output").innerHTML = "User does not like Javascript";
+        }
+        // 4. Using a textarea.
+        function getInputFromTextarea() {
+            let text = document.getElementById("myTextarea").value;
+            document.getElementById("output").innerHTML = "Textarea content: " + text;
+        }
+    </script>
+    <button onclick="getInputFromPrompt()">Get Input (Prompt)</button><br><br>
+    <button onclick="getInputFromConfirm()">Get Input (Confirm)</button><br><br>
+
+    <p>Enter some text:</p>
+
+    <textarea id="myTextarea" rows="4" cols="50"></textarea><br><br>
+    <button onclick="getInputFromTextarea()">Get Input (Textarea)</button>
+
+</body>
+
+</html>

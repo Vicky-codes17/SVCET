@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Output Methods</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Output Methods</h1>
+
+    <p id="demo"></p>
+
+    <script>
+        // 1. innerHTML
+        document.getElementById("demo").innerHTML = "Hello, innerHTML!";
+
+        // 2. document.write() (Generally Avoided)
+        document.write("This is document.write. Use sparingly!");
+
+        // 3. alert()
+        function showAlert() {
+            alert("This is an alert box!");
+        }
+
+        // 4. console.log() Note:Open your browser's developer console (usually by pressing F12) to see the console.log(), console.error(), console.warn(), and console.info() messages.
+        console.log("This is a console log message.");
+
+        // 5. console.error(), console.warn(), console.info()
+        console.error("This is an error message.");
+        console.warn("This is a warning message.");
+        console.info("This is an informational message.");
+
+        // 6. Using textContent
+        let paragraph = document.createElement("p");
+        paragraph.textContent = "This is textContent output.";
+        document.body.appendChild(paragraph);
+
+        // 7. Using appendChild and creating elements.
+        let newDiv = document.createElement("div");
+        let newText = document.createTextNode("Appended text node.");
+        newDiv.appendChild(newText);
+        document.body.appendChild(newDiv);
+
+    </script>
+    <button onclick="showAlert()">Show Alert</button>
+</body>
+
+</html>
