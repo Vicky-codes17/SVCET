@@ -1,7 +1,7 @@
 Date : 17/12/2025
 
-1) Find the Second Largest number in the list
-2) Find the frequency of characters in the string
-3) Check if the two strings are anagrams
-4) Remove duplicates from the list
-5) Given a string count the numeber of vowels
+1) [x] Find the Second Largest number in the list
+2) [x] Find the frequency of characters in the string
+3) [x] Check if the two strings are anagrams
+4) [] Remove duplicates from the list
+5) [] Given a string count the numeber of vowels
