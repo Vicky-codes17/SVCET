@@ -1,4 +1,4 @@
-# Check if the two strings are anagrams
+## Check if the two strings are anagrams
 
 # s1 = "listen"
 # s2 = "silent"

@@ -1,4 +1,4 @@
-# Find the frequency of character in the string
+## Find the frequency of character in the string
 
 string1 = input("Enter a string: ") #vignesh
 char_to_find = input("Enter the character to find its frequency: ")
