@@ -4,5 +4,5 @@ Date : 17/12/2025
 2) [x] Find the frequency of characters in the string
 3) [x] Check if the two strings are anagrams
 4) [x] Remove duplicates from the list
-5) [] Given a string count the number of vowels
+5) [x] Given a string count the number of vowels
 
