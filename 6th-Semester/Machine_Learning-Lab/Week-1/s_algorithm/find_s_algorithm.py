@@ -4,7 +4,7 @@ num_attribute=6
 print("\n the total number of attributes in dataset are:",num_attribute)
 data=[]
 print("\n the given training data set \n:")
-with open("6th-Semester/Machine_Learning-Lab/Week-1/s_algorithm/data/weather.csv",'r') as csvfile:
+with open("/home/vignesh/VS/GitHub/SVCET/6th-Semester/Machine_Learning-Lab/Week-1/s_algorithm/data/weather.csv",'r') as csvfile:
     datareader = csv.reader(csvfile)
     for row in datareader:
         data.append(row)
