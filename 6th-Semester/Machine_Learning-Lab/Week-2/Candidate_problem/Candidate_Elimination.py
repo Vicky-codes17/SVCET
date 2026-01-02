@@ -33,7 +33,7 @@ def candidate_elimination(data):
     return S, G
 
 # Main
-data = load_csv("temperature.csv")
+data = load_csv("/home/vignesh/VS/GitHub/SVCET/6th-Semester/Machine_Learning-Lab/Week-2/Candidate_problem/data/temperature.csv")
 S_final, G_final = candidate_elimination(data)
 print("\n" + "="*30)
 print("Final S:", S_final, "\nFinal G:", G_final)
