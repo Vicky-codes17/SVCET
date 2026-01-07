@@ -1,53 +1,114 @@
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
+// Simple one-to-many chat server with acknowledgements and status tracking
 public class Server {
+    private static final List<ClientHandler> clients = new CopyOnWriteArrayList<>();
+    private static int clientCounter = 0;
+    private static final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     public static void main(String[] args) {
-        try {
-            ServerSocket server = new ServerSocket(5000);
-            System.out.println("Server started. Waiting for clients...");
+        try (ServerSocket server = new ServerSocket(8080)) {
+            server.setReuseAddress(true);
+            System.out.println("[" + getTime() + "] Server started on port 8080");
 
             while (true) {
-                Socket clientSocket = server.accept(); // new client
-                System.out.println("New client connected!");
-
-                // Create a new thread for each client
-                ClientHandler handler = new ClientHandler(clientSocket);
-                Thread t = new Thread(handler);
-                t.start(); // start thread
+                Socket client = server.accept();
+                String name = "Client " + (++clientCounter);
+                ClientHandler handler = new ClientHandler(client, name);
+                clients.add(handler);
+                System.out.println("[" + getTime() + "] " + name + " connected");
+                broadcast(name + " connected", handler, true);
+                new Thread(handler).start();
             }
-
         } catch (IOException e) {
-            System.out.println("Server Error: " + e.getMessage());
+            System.out.println("Server error: " + e.getMessage());
         }
     }
-}
 
-// Thread class to handle each client
-class ClientHandler implements Runnable {
-    private Socket socket;
-
-    public ClientHandler(Socket socket) {
-        this.socket = socket;
+    private static void broadcast(String message, ClientHandler source, boolean isSystemMessage) {
+        for (ClientHandler client : clients) {
+            client.send(message);
+        }
+        String displayMessage = isSystemMessage ? "[" + getTime() + "] [SYSTEM] " + message : "[" + getTime() + "] " + message;
+        System.out.println(displayMessage);
     }
 
-    public void run() {
-        try {
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(socket.getInputStream()));
-            PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+    private static String getTime() {
+        return LocalDateTime.now().format(dateFormat);
+    }
 
-            writer.println("Connected to server!");
+    private static class ClientHandler implements Runnable {
+        private final Socket socket;
+        private final String name;
+        private PrintWriter out;
+        private volatile boolean isAlive = true;
+        private long lastMessageTime = System.currentTimeMillis();
+        private static final long TIMEOUT = 30000; // 30 seconds
 
-            String message;
-            while ((message = reader.readLine()) != null) {
-                System.out.println("Client says: " + message);
-                writer.println("Server received: " + message);
+        ClientHandler(Socket socket, String name) {
+            this.socket = socket;
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public boolean isAlive() {
+            return isAlive;
+        }
+
+        @Override
+        public void run() {
+            try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                 PrintWriter writer = new PrintWriter(socket.getOutputStream(), true)) {
+
+                this.out = writer;
+                String line;
+                while ((line = in.readLine()) != null && isAlive) {
+                    lastMessageTime = System.currentTimeMillis();
+                    
+                    if ("exit".equalsIgnoreCase(line)) {
+                        break;
+                    }
+
+                    if ("ACK".equalsIgnoreCase(line)) {
+                        System.out.println("[" + getTime() + "] " + name + " - Acknowledgement received");
+                        continue;
+                    }
+
+                    // Broadcast the message
+                    broadcast(name + ": " + line, this, false);
+                    
+                    // Send acknowledgement back to client
+                    out.println("[SERVER ACK] Message received: " + line);
+                }
+            } catch (IOException e) {
+                System.out.println("[" + getTime() + "] " + name + " error: " + e.getMessage());
+            } finally {
+                isAlive = false;
+                clients.remove(this);
+                broadcast(name + " disconnected", this, true);
+                try {
+                    socket.close();
+                } catch (IOException ignored) { }
+                System.out.println("[" + getTime() + "] " + name + " offline");
             }
+        }
 
-        } catch (IOException e) {
-            System.out.println("Client disconnected.");
+        void send(String message) {
+            if (out != null && isAlive) {
+                out.println(message);
+            }
         }
     }
 }
