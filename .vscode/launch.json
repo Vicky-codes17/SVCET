@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "CaesarCipher",
+      "request": "launch",
+      "mainClass": "CaesarCipher",
+      "projectName": "SVCET_ef30f6a5"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
