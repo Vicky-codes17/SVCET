@@ -1,0 +1,4 @@
+Date: 29/12/2025
+
+1) [x] Write a C Program the arthimetic operation two integer number
+2) [] Write a C program to find the roots of a quadratic equation
