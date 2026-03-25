@@ -21,7 +21,8 @@ def candidate_elimination(data):
                 elif S[j] != X[j]:
                     S[j] = '?'
             # Remove inconsistent G
-            G = [g for g in G if all(g[k] == '?' or g[k] == S[k] for k in range(num_attributes))]
+            G = [g for g in G if all(g[k] == '?' 
+            or g[k] == S[k] for k in range(num_attributes))]
         else:
             # Specialize G
             G = [h for g in G for j in range(num_attributes) 
