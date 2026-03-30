@@ -4,7 +4,6 @@ import javax.crypto.SecretKey;
 
 public class AESExample {
     public static void main(String[] args) throws Exception {
-
         String message = "Hello World";
 
         KeyGenerator keyGen = KeyGenerator.getInstance("AES");
