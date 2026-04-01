@@ -4,7 +4,6 @@ import javax.crypto.SecretKey;
 import java.util.Scanner;
 
 public class BlowfishCipher {
-
     public static void main(String[] args) throws Exception {
 
         Scanner sc = new Scanner(System.in);
